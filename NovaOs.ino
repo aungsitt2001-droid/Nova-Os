@@ -1,22 +1,21 @@
 #include "Config.h"
 #include "Version.h"
 #include "Pins.h"
+
 #include "LGFX/LGFX_TDisplayS3.h"
+#include "Screens/BootScreen.h"
 
 void setup()
 {
-  Serial.begin(115200);
+    Serial.begin(115200);
 
-  lcd.init();
+    lcd.init();
+    lcd.setRotation(1);
 
-  lcd.setRotation(1);
-  lcd.fillScreen(TFT_BLACK);
-
-  lcd.setTextColor(TFT_WHITE);
-  lcd.setTextSize(2);
-  lcd.drawString("Nova One", 20, 80);
+    bootScreen.begin();
 }
 
 void loop()
 {
+    bootScreen.update();
 }
