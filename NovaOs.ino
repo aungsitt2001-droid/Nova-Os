@@ -1,17 +1,22 @@
 #include "Config.h"
 #include "Version.h"
+#include "Pins.h"
+#include "LGFX/LGFX_TDisplayS3.h"
 
-void setup() {
+void setup()
+{
   Serial.begin(115200);
 
-  Serial.println();
-  Serial.println("================================");
-  Serial.println("        Nova One");
-  Serial.print("Nova OS ");
-  Serial.println(NOVA_VERSION);
-  Serial.println("================================");
+  lcd.init();
+
+  lcd.setRotation(1);
+  lcd.fillScreen(TFT_BLACK);
+
+  lcd.setTextColor(TFT_WHITE);
+  lcd.setTextSize(2);
+  lcd.drawString("Nova One", 20, 80);
 }
 
-void loop() {
-  delay(1000);
+void loop()
+{
 }
