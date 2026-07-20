@@ -10,6 +10,8 @@ void setup()
     Serial.begin(115200);
 
     lcd.init();
+    pinMode(TFT_BL, OUTPUT);
+    digitalWrite(TFT_BL, HIGH);
     lcd.setRotation(1);
 
     bootScreen.begin();
