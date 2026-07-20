@@ -21,4 +21,30 @@ cfg.pin_dc   = 16;
 
 _bus.config(cfg);
 _panel.setBus(&_bus);
+auto pcfg = _panel.config();
+
+pcfg.pin_cs = 39;
+pcfg.pin_rst = 47;
+pcfg.pin_busy = -1;
+
+pcfg.memory_width = 170;
+pcfg.memory_height = 320;
+
+pcfg.panel_width = 170;
+pcfg.panel_height = 320;
+
+pcfg.offset_x = 0;
+pcfg.offset_y = 0;
+
+pcfg.offset_rotation = 0;
+
+pcfg.readable = false;
+pcfg.invert = false;
+pcfg.rgb_order = false;
+pcfg.dlen_16bit = false;
+pcfg.bus_shared = true;
+
+_panel.config(pcfg);
+
+setPanel(&_panel);    
 }
